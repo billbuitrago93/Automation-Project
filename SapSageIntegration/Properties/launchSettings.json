@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "SapSageIntegration": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7163",
+      "launchBrowser": false
+    }
+  }
+}

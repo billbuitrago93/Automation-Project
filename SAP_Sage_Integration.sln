@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SapSageIntegration", "SapSageIntegration\SapSageIntegration.csproj", "{6B56A2D4-8B2A-4011-AEF4-54B44E069FE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SapConcurApiClient", "SapConcurApiClient\SapConcurApiClient.csproj", "{ACC960B3-5AAF-434F-8E7A-67C530CF722E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B56A2D4-8B2A-4011-AEF4-54B44E069FE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B56A2D4-8B2A-4011-AEF4-54B44E069FE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B56A2D4-8B2A-4011-AEF4-54B44E069FE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B56A2D4-8B2A-4011-AEF4-54B44E069FE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACC960B3-5AAF-434F-8E7A-67C530CF722E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACC960B3-5AAF-434F-8E7A-67C530CF722E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACC960B3-5AAF-434F-8E7A-67C530CF722E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACC960B3-5AAF-434F-8E7A-67C530CF722E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18434B46-468F-44D4-83D7-B2530B54A9FA}
+	EndGlobalSection
+EndGlobal
