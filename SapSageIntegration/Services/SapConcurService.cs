@@ -15,7 +15,7 @@ namespace SapSageIntegration.Services
 
         public SapConcurService(ConcurVendorsApi concurVendorsApi)
         {
-            _concurVendorsApi = concurVendorsApi;
+            _concurVendorsApi = concurVendorsApi; 
         }
 
         public async Task<List<object>> GetInvoicesAsync()

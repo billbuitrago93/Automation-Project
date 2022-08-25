@@ -22,9 +22,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\SapConcurApiClient\SapConcurApiClient.csproj" />
   </ItemGroup>
 </Project>
