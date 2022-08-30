@@ -1,4 +1,8 @@
-﻿using System;
+﻿using SapConcurApiClient.ExpenseReportModels;
+using SapConcurApiClient.PaymentRequestModels;
+using SapConcurApiClient.VendorModels;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace SapSageIntegration.Services
@@ -8,19 +12,24 @@ namespace SapSageIntegration.Services
     /// </summary>
     public class SageIntactService
     {
-        public Task CreateVendors(Object item)
+        public SageIntactService()
         {
-            return Task.CompletedTask;
+
         }
 
-        public Task CreateARPayments(Object item)
+        public async Task CreateVendorsAsync(List<Vendor> items)
         {
-            return Task.CompletedTask;
+           
         }
 
-        public Task CreateAPPayments(Object item)
+        public async Task CreateARPaymentsAsync(List<PaymentRequest> items)
         {
-            return Task.CompletedTask;
+        
+        }
+
+        public async Task CreateAPPaymentsAsync(List<ReportGet> items)
+        {
+          
         }
     }
 }

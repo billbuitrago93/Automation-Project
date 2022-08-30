@@ -1,7 +1,8 @@
 using Microsoft.Azure.WebJobs;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging; 
 using SapSageIntegration.Services;
 using SapSageIntegration.Services.Message;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace SapSageIntegration
@@ -20,7 +21,8 @@ namespace SapSageIntegration
         public async Task<MessageDto> RunAsync([TimerTrigger("%SAPGetRequestTriggerTime%")] TimerInfo myTimer, ILogger log)
         {
             var invoices = await _sapConcurService.GetInvoicesAsync(); 
-            return new MessageDto(MessageType.Invoices, invoices);
+
+            return new MessageDto(MessageType.Invoices, JsonSerializer.Serialize(invoices));
         }
     }
 }

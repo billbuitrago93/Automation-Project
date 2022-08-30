@@ -2,6 +2,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using SapSageIntegration.Services;
 using SapSageIntegration.Services.Message;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace SapSageIntegration
@@ -20,7 +21,7 @@ namespace SapSageIntegration
         public async Task<MessageDto> RunAsync([TimerTrigger("%SAPGetRequestTriggerTime%")] TimerInfo myTimer, ILogger log)
         {
             var vendors = await _sapConcurService.GetVendorsAsync();
-            return new MessageDto(MessageType.Vendors, vendors);
+            return new MessageDto(MessageType.Vendors, JsonSerializer.Serialize(vendors));
         }
     }
 }

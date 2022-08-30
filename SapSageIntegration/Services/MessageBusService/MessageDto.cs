@@ -12,7 +12,7 @@ namespace SapSageIntegration.Services.Message
         {
         }
 
-        public MessageDto(MessageType type, dynamic value)
+        public MessageDto(MessageType type, string value)
         {
             this.Type = type;
             this.Value = value;
@@ -20,8 +20,10 @@ namespace SapSageIntegration.Services.Message
 
         public MessageType Type { get; set; }
 
-        public dynamic Value { get; set; }
+        public string Value { get; set; }
 
         public int ResendCount { get; set; } = 0;
+
+        public string ResendDesc { get; set; } 
     }
 }

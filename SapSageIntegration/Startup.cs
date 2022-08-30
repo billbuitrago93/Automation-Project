@@ -21,6 +21,7 @@ namespace SapSageIntegration
             const string sapApiBaseUrl = "http://localhost:50352/api/v3.0";
             builder.Services.AddSingleton(new ConcurApiService(sapApiBaseUrl));
             builder.Services.AddSingleton<SapConcurService>();
+            builder.Services.AddSingleton<SageIntactService>();
         }
     }
 }
