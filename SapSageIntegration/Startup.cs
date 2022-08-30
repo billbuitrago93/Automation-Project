@@ -11,7 +11,7 @@ namespace SapSageIntegration
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
-            builder.Services.AddSingleton<ConcurApiService>();
+            builder.Services.AddSingleton(new ConcurApiService("http://localhost:50352/api/v3.0"));
             builder.Services.AddSingleton<SapConcurService>();
 
             builder.Services.AddSingleton<MessageBusService>();

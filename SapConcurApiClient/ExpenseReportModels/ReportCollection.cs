@@ -26,7 +26,7 @@ namespace SapConcurApiClient.ExpenseReportModels
         /// </summary>
         /// <param name="items">items.</param>
         /// <param name="nextPage">The URI of the next page of results, if any..</param>
-        public ReportCollection(ReportGet items = default(ReportGet), string nextPage = default(string))
+        public ReportCollection(List<ReportGet> items = default(List<ReportGet>), string nextPage = default(string))
         {
             this.Items = items;
             this.NextPage = nextPage;
@@ -36,7 +36,7 @@ namespace SapConcurApiClient.ExpenseReportModels
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name = "Items", EmitDefaultValue = false)]
-        public ReportGet Items { get; set; }
+        public List<ReportGet> Items { get; set; }
 
         /// <summary>
         /// The URI of the next page of results, if any.

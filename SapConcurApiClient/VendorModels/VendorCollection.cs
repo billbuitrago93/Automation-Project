@@ -29,7 +29,7 @@ namespace SapConcurApiClient.VendorModels
         /// <param name="requestRunSummary">The URI of the next page of results, if any..</param>
         /// <param name="totalCount">Record Number for create/update request..</param>
         /// <param name="items">items.</param>
-        public VendorCollection(Vendor vendor = default(Vendor), string nextPage = default(string), string requestRunSummary = default(string), int? totalCount = default(int?), Object items = default(Object))
+        public VendorCollection(Vendor vendor = default(Vendor), string nextPage = default(string), string requestRunSummary = default(string), int? totalCount = default(int?), List<Vendor> items = default(List<Vendor>))
         {
             this.Vendor = vendor;
             this.NextPage = nextPage;
@@ -69,7 +69,7 @@ namespace SapConcurApiClient.VendorModels
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name = "Items", EmitDefaultValue = false)]
-        public Object Items { get; set; }
+        public List<Vendor> Items { get; set; }  
 
         /// <summary>
         /// Returns the string presentation of the object

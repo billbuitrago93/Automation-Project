@@ -45,7 +45,7 @@ namespace SapConcurApiClient.Api
                     return content.access_token;
                 }
             }
-            throw new Exception(JsonSerializer.Deserialize<dynamic>(response.Content));
+            throw new Exception(response.Content);
         }
     }
 }

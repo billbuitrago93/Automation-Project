@@ -2,6 +2,7 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Logging;
 using SapSageIntegration.Services;
 using System;
+using System.Threading.Tasks;
 
 namespace SapSageIntegration
 {
@@ -19,7 +20,7 @@ namespace SapSageIntegration
         }
 
         [FunctionName("SapConcurFunction")]
-        public void Run([TimerTrigger("0 */1 * * * *")] TimerInfo myTimer, ILogger log)
+        public async Task RunAsync([TimerTrigger("0 */1 * * * *")] TimerInfo myTimer, ILogger log)
         {
             var startTime = DateTime.Now;
             var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -29,8 +30,8 @@ namespace SapSageIntegration
             bool hasError = false;
             try
             {
-                var vendors = _sapConcurService.GetVendorsAsync();
-                _messageBusService.AddMessageToQueueAsync(MessageType.Vendors, vendors);
+                var vendors = await _sapConcurService.GetVendorsAsync();
+                await _messageBusService.AddMessageToQueueAsync(MessageType.Vendors, vendors);
             }
             catch (Exception ex)
             {
@@ -40,8 +41,8 @@ namespace SapSageIntegration
 
             try
             {
-                var invoices = _sapConcurService.GetInvoicesAsync();
-                _messageBusService.AddMessageToQueueAsync(MessageType.Invoices, invoices);
+                var invoices = await _sapConcurService.GetInvoicesAsync();
+                await _messageBusService.AddMessageToQueueAsync(MessageType.Invoices, invoices);
             }
             catch (Exception ex)
             {
@@ -51,8 +52,8 @@ namespace SapSageIntegration
 
             try
             {
-                var expenseRecords = _sapConcurService.GetExpenseReportsAsync();
-                _messageBusService.AddMessageToQueueAsync(MessageType.ExpenseReports, expenseRecords);
+                var expenseRecords = await _sapConcurService.GetExpenseReportsAsync();
+                await _messageBusService.AddMessageToQueueAsync(MessageType.ExpenseReports, expenseRecords);
             }
             catch (Exception ex)
             {
