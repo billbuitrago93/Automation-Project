@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SapSageIntegration.Services.Message
+namespace SapSageIntegration.Services
 {
     public class MessageDto
     {
@@ -14,8 +14,8 @@ namespace SapSageIntegration.Services.Message
 
         public MessageDto(MessageType type, string value)
         {
-            this.Type = type;
-            this.Value = value;
+            Type = type;
+            Value = value;
         }
 
         public MessageType Type { get; set; }
@@ -24,6 +24,6 @@ namespace SapSageIntegration.Services.Message
 
         public int ResendCount { get; set; } = 0;
 
-        public string ResendDesc { get; set; } 
+        public string ResendDesc { get; set; }
     }
 }

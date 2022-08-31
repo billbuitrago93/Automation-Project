@@ -20,6 +20,11 @@ namespace SapSageIntegration.Services
             _concurApiService = concurApiService; 
         }
 
+        /// <summary>
+        /// Gets <see href="https://developer.concur.com/api-reference/invoice/v3.payment-request.html">SAP Payment Request</see> 
+        /// for each <see href="https://developer.concur.com/api-reference/invoice/v3.payment-request-digest.html">SAP Payment Request Digest</see> items
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<PaymentRequest>> GetInvoicesAsync()
         {
             var paymentRequests = new List<PaymentRequest>(); 
@@ -33,12 +38,20 @@ namespace SapSageIntegration.Services
             return paymentRequests;
         }
 
+        /// <summary>
+        /// Gets all reports Returns all reports owned by the user from <see href="https://developer.concur.com/api-reference/expense/expense-report/v3.reports.html">SAP Expense Reports</see>
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<ReportGet>> GetExpenseReportsAsync()
         {
             var expenseReports = await _concurApiService.ExpenseReportsApi.ExpenseReportsGetAsync(offset: null, limit: null, user: null, approvalStatusCode: null, paymentStatusCode: null, currencyCode: null, paymentType: null, reimbursementMethod: null, approverLoginID: null, expenseTypeCode: null, attendeeTypeCode: null, countryCode: null, batchID: null, vendorName: null, hasVAT: null, hasImages: null, hasAttendees: null, hasBillableExpenses: null, isTestUser: null, expenseGroupConfigID: null, entryTransactionDateBefore: null, entryTransactionDateAfter: null, createDateBefore: null, createDateAfter: null, userDefinedDateBefore: null, userDefinedDateAfter: null, submitDateBefore: null, submitDateAfter: null, processingPaymentDateBefore: null, processingPaymentDateAfter: null, paidDateBefore: null, paidDateAfter: null, modifiedDateBefore: null, modifiedDateAfter: null);
             return expenseReports.Items;
         }
 
+        /// <summary>
+        /// Retrieves an existing vendors from <see href="https://developer.concur.com/api-reference/invoice/v3.vendor.html">SAP Vendors</see> endpoint. 
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<Vendor>> GetVendorsAsync()
         {
             var vendorCollection = await _concurApiService.VendorsApi.InvoiceVendorsGetAsync(limit: 1000, offset: null, sortDirection: null, sortBy: null, searchType: null, vendorCode: null, vendorName: null, taxID: null, buyerAccountNumber: null, addressCode: null, address1: null, address2: null, address3: null, city: null, state: null, postalCode: null, approved: null, country: null, custom1: null, custom2: null, custom3: null, custom4: null, custom5: null, custom6: null, custom7: null, custom8: null, custom9: null, custom10: null, custom11: null, custom12: null, custom13: null, custom14: null, custom15: null, custom16: null, custom17: null, custom18: null, custom19: null, custom20: null);
