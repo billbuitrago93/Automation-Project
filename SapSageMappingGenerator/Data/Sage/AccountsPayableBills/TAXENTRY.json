@@ -1,0 +1,16 @@
+// APBILL.APBILLITEMS.APBILLITEM.TAXENTRIES.TAXENTRY (AU, GB, ZA only)
+// https://developer.intacct.com/api/accounts-payable/bills/#create-APBILLITEM.TAXITEM
+[
+  {
+    "Name": "DETAILID",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Unique ID of a tax detail with the tax rate to use"
+  },
+  {
+    "Name": "TRX_TAX",
+    "Required": "Optional",
+    "Type": "currency",
+    "Description": "Transaction tax, which is your manually calculated value for the tax. The amount of the tax line is automatically included in the amount due (TOTAL_DUE) for the bill. Providing a value here overrides any calculated values."
+  }
+]

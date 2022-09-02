@@ -10,8 +10,6 @@ namespace SapConcurApiClient.Api
 {
     public class ConcurApiService
     {
-       // private const string BasePath = "https://www.concursolutions.com/api/v3.0";
-
         private readonly Configuration configuration;
 
         public ConcurExpenseReportsApi ExpenseReportsApi { get; private set; }
@@ -19,11 +17,11 @@ namespace SapConcurApiClient.Api
         public ConcurPaymentRequestApi PaymentRequestApi{ get; private set; }
         public ConcurVendorsApi VendorsApi { get; private set; }
 
-        public ConcurApiService(string basePath)
+        public ConcurApiService(string basePath, string clientId, string clientSecret)
         { 
             configuration = new Configuration();
             configuration.BasePath = basePath;
-            //configuration.AccessToken = ConcurApiOAuthService.GetAuthToken("" ,"");
+           // configuration.AccessToken = ConcurApiOAuthService.GetAuthToken(clientId, clientSecret);
 
             ExpenseReportsApi = new ConcurExpenseReportsApi(configuration);
             PaymentRequestDigestApi = new ConcurPaymentRequestDigestApi(configuration);

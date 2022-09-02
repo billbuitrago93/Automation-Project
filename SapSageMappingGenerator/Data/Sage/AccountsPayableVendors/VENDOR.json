@@ -1,0 +1,320 @@
+[
+  {
+    "Name": "VENDORID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Unique ID for the vendor. Required if company does not use document sequencing, or you can provide a value to use instead of the document sequence value."
+  },
+  {
+    "Name": "NAME",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Name"
+  },
+  {
+    "Name": "DISPLAYCONTACT",
+    "Required": "Required",
+    "Type": "object",
+    "Description": "Contact info"
+  },
+  {
+    "Name": "STATUS",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Status. Use active for Active or inactive for Inactive (Default: active)"
+  },
+  {
+    "Name": "ONETIME",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "One time. Use false for No, true for Yes. (Default: false)"
+  },
+  {
+    "Name": "HIDEDISPLAYCONTACT",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Exclude from contact list. Use false for No, true for Yes. (Default: false)"
+  },
+  {
+    "Name": "VENDTYPE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Vendor type ID"
+  },
+  {
+    "Name": "PARENTID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Parent vendor ID"
+  },
+  {
+    "Name": "GLGROUP",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "GL group name"
+  },
+  {
+    "Name": "DEFAULT_LEAD_TIME",
+    "Required": "Optional",
+    "Type": "integer",
+    "Description": "Default lead time in days for replenishment purposes. Can be overridden by lead time specified on an item with that vendor, or lead time specified for on an item with a warehouse/vendor combination with that vendor. (Default: 1)"
+  },
+  {
+    "Name": "TAXID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Tax ID"
+  },
+  {
+    "Name": "NAME1099",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Form 1099 name"
+  },
+  {
+    "Name": "FORM1099TYPE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Form 1099 type"
+  },
+  {
+    "Name": "FORM1099BOX",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Form 1099 box"
+  },
+  {
+    "Name": "SUPDOCID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Attachments ID"
+  },
+  {
+    "Name": "APACCOUNT",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Default expense GL account number"
+  },
+  {
+    "Name": "OFFSETGLACCOUNTNO",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "AP account number"
+  },
+  {
+    "Name": "CREDITLIMIT",
+    "Required": "Optional",
+    "Type": "currency",
+    "Description": "Credit limit"
+  },
+  {
+    "Name": "RETAINAGEPERCENTAGE",
+    "Required": "Optional",
+    "Type": "numeric",
+    "Description": "Default retainage percentage for vendors. (Construction subscription)"
+  },
+  {
+    "Name": "ONHOLD",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "On hold. Use false for No, true for Yes. (Default: false)"
+  },
+  {
+    "Name": "DONOTCUTCHECK",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Do not pay. Use false for No, true for Yes. (Default: false)"
+  },
+  {
+    "Name": "COMMENTS",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Comments"
+  },
+  {
+    "Name": "CURRENCY",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Default currency code"
+  },
+  {
+    "Name": "CONTACTINFO",
+    "Required": "Optional",
+    "Type": "object",
+    "Description": "Primary contact. If blank system will use DISPLAYCONTACT."
+  },
+  {
+    "Name": "PAYTO",
+    "Required": "Optional",
+    "Type": "object",
+    "Description": "Pay to contact. If blank system will use DISPLAYCONTACT."
+  },
+  {
+    "Name": "RETURNTO",
+    "Required": "Optional",
+    "Type": "object",
+    "Description": "Return to contact. If blank system will use DISPLAYCONTACT."
+  },
+  {
+    "Name": "CONTACT_LIST_INFO",
+    "Required": "Optional",
+    "Type": "CONTACT_LIST_INFO[]",
+    "Description": "Contact list (alternative to VENDORCONTACTS). Multiple individual CONTACT_LIST_INFO elements may be passed. If this parameter and VENDORCONTACTS are both provided, VENDORCONTACTS is used. If neither are provided, any values supplied for other contacts (Primary, Pay to, or Return to) are used to create a contact list."
+  },
+  {
+    "Name": "VENDORCONTACTS",
+    "Required": "Optional",
+    "Type": "VENDORENTITYCONTACTS[0…n]",
+    "Description": "Contact list (alternative to CONTACT_LIST_INFO). If this parameter and CONTACT_LIST_INFO are both provided, VENDORCONTACTS is used. If neither are provided, any values supplied for other contacts (Primary, Pay to, or Return to) are used to create a contact list."
+  },
+  {
+    "Name": "VENDOREMAILTEMPLATES",
+    "Required": "Optional",
+    "Type": "VENDOREMAILTEMPLATE[0…n]",
+    "Description": "Vendor email templates."
+  },
+  {
+    "Name": "VENDORACCTNOLOCATIONS",
+    "Required": "Optional",
+    "Type": "VENDORACCTNOLOCHEAD[0…n]",
+    "Description": "Vendor location assigned account numbers (alternative to VENDOR_ACCTNO_LOC_HEAD ). If this parameter and VENDOR_ACCTNO_LOC_HEAD are both provided, VENDORACCTNOLOCATIONS is used."
+  },
+  {
+    "Name": "VENDOR_ACCTNO_LOC_HEAD",
+    "Required": "Optional",
+    "Type": "VENDOR_ACCTNO_LOC_HEAD[]",
+    "Description": "Vendor location assigned account numbers (alternative to VENDORACCTNOLOCATIONS ). Multiple individual VENDOR_ACCTNO_LOC_HEAD elements may be passed. If this parameter and VENDORACCTNOLOCATIONS are both provided, VENDORACCTNOLOCATIONS is used."
+  },
+  {
+    "Name": "FILEPAYMENTSERVICE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Enable direct payments to this vendor using a bank file. Choose ACH, BANKFILE, or NONE. (Default: NONE)"
+  },
+  {
+    "Name": "PYMTCOUNTRYCODE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Country code for a vendor. Required if the vendor is to receive bank file payments. Choose AU, ZA, or GB. (AU, GB, ZA only)"
+  },
+  {
+    "Name": "VENDORBANKFILEDETAILS",
+    "Required": "Optional",
+    "Type": "VENDORBANKFILEDETAIL[]",
+    "Description": "Vendor bank file payment details. The values you provide are validated if FILEPAYMENTSERVICE is set to BANKFILE. (AU, GB, ZA only)"
+  },
+  {
+    "Name": "PROVIDERVENDORS",
+    "Required": "Optional",
+    "Type": "PROVIDERVENDOR[]",
+    "Description": "Electronic payment providers to link to this vendor. You can also create a PROVIDERVENDOR object directly. (Early Adopter program)"
+  },
+  {
+    "Name": "PAYMETHODKEY",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Preferred payment method"
+  },
+  {
+    "Name": "MERGEPAYMENTREQ",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Merge payment requests. Use false for No, true for Yes. (Default: true)"
+  },
+  {
+    "Name": "PAYMENTNOTIFY",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Send automatic payment notification. Use false for No, true for Yes. (Default: false)"
+  },
+  {
+    "Name": "BILLINGTYPE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Vendor billing type"
+  },
+  {
+    "Name": "PAYMENTPRIORITY",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Payment priority"
+  },
+  {
+    "Name": "TERMNAME",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Payment term"
+  },
+  {
+    "Name": "DISPLAYTERMDISCOUNT",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Display term discount on check stub. Use false for No, true for Yes. (Default: true)"
+  },
+  {
+    "Name": "ACHENABLED",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "ACH enabled. Use false for No, true for Yes. (Default: false)"
+  },
+  {
+    "Name": "ACHBANKROUTINGNUMBER",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "ACH bank routing number"
+  },
+  {
+    "Name": "ACHACCOUNTNUMBER",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "ACH bank account number"
+  },
+  {
+    "Name": "ACHACCOUNTTYPE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "ACH bank account type"
+  },
+  {
+    "Name": "ACHREMITTANCETYPE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "ACH bank account class"
+  },
+  {
+    "Name": "VENDORACCOUNTNO",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Vendor account number"
+  },
+  {
+    "Name": "DISPLOCACCTNOCHECK",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Display location assigned account number on check stub. Use false for No, true for Yes. (Default: false)"
+  },
+  {
+    "Name": "OBJECTRESTRICTION",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Restriction type. Use Unrestricted, RootOnly, or Restricted. (Default Unrestricted)"
+  },
+  {
+    "Name": "RESTRICTEDLOCATIONS",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Restricted location IDs. Use if OBJECTRESTRICTION is Restricted. Implode multiple IDs with #~#."
+  },
+  {
+    "Name": "RESTRICTEDDEPARTMENTS",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Restricted department IDs. Use if OBJECTRESTRICTION is Restricted. Implode multiple IDs with #~#."
+  },
+  {
+    "Name": "ISINDIVIDUAL",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Specifies whether to mark the vendor as an individual person so that personally identifiable information (PII) can be masked. Use false for No, true for Yes. (Default: false) (Vendor Payments powered by CSI)"
+  }
+]

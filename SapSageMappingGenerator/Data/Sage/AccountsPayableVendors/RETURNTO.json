@@ -1,0 +1,8 @@
+[
+  {
+    "Name": "CONTACTNAME",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Return to contact name"
+  }
+]

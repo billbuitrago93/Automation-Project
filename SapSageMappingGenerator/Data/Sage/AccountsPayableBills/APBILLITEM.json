@@ -1,0 +1,160 @@
+// APBILL.APBILLITEMS.APBILLITEM
+// https://developer.intacct.com/api/accounts-payable/bills/#create-APBILLITEM
+[
+  {
+    "Name": "ACCOUNTNO",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "GL account number. Required if not using ACCOUNTLABEL."
+  },
+  {
+    "Name": "ACCOUNTLABEL",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "AP account label. Required if not using ACCOUNTNO."
+  },
+  {
+    "Name": "OFFSETGLACCOUNTNO",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "AP account number"
+  },
+  {
+    "Name": "TRX_AMOUNT",
+    "Required": "Optional",
+    "Type": "currency",
+    "Description": "Transaction amount before taxes. This value is required if INCLUSIVETAX is set to false (or omitted) on the header. (This value will be ignored as an input if INCLUSIVETAX is true because the value will be calculated for you.)"
+  },
+  {
+    "Name": "TOTALTRXAMOUNT",
+    "Required": "Optional",
+    "Type": "currency",
+    "Description": "Transaction amount for the line including taxes, which is required if INCLUSIVETAX is set to true on the header. The system uses the value you provide here and the tax rate of the tax detail (DETAILID) for the tax entry to calculate the transaction amount (TRX_AMOUNT) for the line and transaction tax (TRX_TAX) for the tax entry. (AU, GB, ZA only)"
+  },
+  {
+    "Name": "ENTRYDESCRIPTION",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Memo"
+  },
+  {
+    "Name": "FORM1099",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Form 1099. Vendor must be set up for 1099s. false - No, true - Yes"
+  },
+  {
+    "Name": "FORM1099TYPE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Form 1099 type"
+  },
+  {
+    "Name": "FORM1099BOX",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Form 1099 box"
+  },
+  {
+    "Name": "BILLABLE",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Billable. false - No (default), true - Yes"
+  },
+  {
+    "Name": "ALLOCATION",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Allocation ID"
+  },
+  {
+    "Name": "LOCATIONID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "LOCATIONID of an active location. Required if company is multi-entity enabled."
+  },
+  {
+    "Name": "DEPARTMENTID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Department ID"
+  },
+  {
+    "Name": "PROJECTID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Project ID"
+  },
+  {
+    "Name": "TASKID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Task ID. Only valid when the parent PROJECTID is also specified."
+  },
+  {
+    "Name": "COSTTYPEID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Cost type ID. Only valid when PROJECTID and TASKID are specified. (Construction subscription)"
+  },
+  {
+    "Name": "CUSTOMERID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Customer ID"
+  },
+  {
+    "Name": "VENDORID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Vendor ID"
+  },
+  {
+    "Name": "EMPLOYEEID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Employee ID"
+  },
+  {
+    "Name": "ITEMID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Item ID"
+  },
+  {
+    "Name": "CLASSID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Class ID"
+  },
+  {
+    "Name": "CONTRACTID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Contract ID"
+  },
+  {
+    "Name": "WAREHOUSEID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Warehouse ID"
+  },
+  {
+    "Name": "GLDIM",
+    "Required": "Optional",
+    "Type": "integer",
+    "Description": "User defined dimension id field. UDD object integration name usually appended to GLDIM."
+  },
+  {
+    "Name": "PARTIALEXEMPT",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Enables partial exemption so that you can reclaim a portion of your input VAT on purchases. (GB only). false - No (default), true - Yes"
+  },
+  {
+    "Name": "TAXENTRIES",
+    "Required": "Optional",
+    "Type": "array of TAXENTRY",
+    "Description": "Tax entries for the line. Providing multiple entries is allowed if your tax solution supports it (AU and GB only). For ZA, only one tax entry is allowed."
+  }
+]

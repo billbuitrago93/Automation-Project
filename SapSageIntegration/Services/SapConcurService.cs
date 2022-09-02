@@ -15,9 +15,9 @@ namespace SapSageIntegration.Services
     {
         private readonly ConcurApiService _concurApiService;
 
-        public SapConcurService(ConcurApiService concurApiService)
+        public SapConcurService(SapConcurConfig sapConcurConfig)
         {
-            _concurApiService = concurApiService; 
+            _concurApiService = new ConcurApiService(sapConcurConfig.BaseUrl, sapConcurConfig.ClientId, sapConcurConfig.ClientSecret);
         }
 
         /// <summary>

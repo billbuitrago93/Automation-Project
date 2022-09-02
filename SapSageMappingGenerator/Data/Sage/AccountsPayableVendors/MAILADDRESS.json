@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "ADDRESS1",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Address line 1"
+  },
+  {
+    "Name": "ADDRESS2",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Address line 2"
+  },
+  {
+    "Name": "CITY",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "City"
+  },
+  {
+    "Name": "STATE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "State/province"
+  },
+  {
+    "Name": "ZIP",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Zip/postal code"
+  },
+  {
+    "Name": "COUNTRY",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Country"
+  },
+  {
+    "Name": "ISOCOUNTRYCODE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "ISO country code. When ISO country codes are enabled in a company, both COUNTRY and ISOCOUNTRYCODE must be provided."
+  }
+]

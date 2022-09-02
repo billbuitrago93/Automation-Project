@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using SapConcurApiClient.ExpenseReportModels;
 using SapConcurApiClient.PaymentRequestModels;
 using SapConcurApiClient.VendorModels;
+using SapSageIntegration.Models;
 using SapSageIntegration.Services;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,14 @@ namespace SapSageIntegration
 
         public SageIntactFunction()
         {
-            sageIntactService = new SageIntactService();
+            var config = new SageIntactConfig();
+            config.EndpointUrl = "https://api.intacct.com/ia/xml/xmlgw.phtml";
+            config.SenderId = "SapSageInteg";
+            config.SenderPassword = "Sage#ibn1996adam99";
+            config.CompanyId = "Sample hdzjnrz";
+            config.UserId = "SSIUser";
+            config.UserPassword = "ERgB0Tj!j95";
+            sageIntactService = new SageIntactService(config);
         }
 
         [FunctionName("Sage-Intact-Function")]

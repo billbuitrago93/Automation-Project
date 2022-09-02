@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "RECORDNO",
+    "Required": "Required",
+    "Type": "integer",
+    "Description": "Record number of the provider vendor object to update"
+  },
+  {
+    "Name": "PROVIDERID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "ID of the payment provider"
+  },
+  {
+    "Name": "STATUS",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Status. Use active or inactive."
+  }
+]

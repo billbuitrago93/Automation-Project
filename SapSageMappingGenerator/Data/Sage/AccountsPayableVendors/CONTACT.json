@@ -1,0 +1,8 @@
+[
+  {
+    "Name": "NAME",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Contact name"
+  }
+]

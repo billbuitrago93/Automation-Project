@@ -1,0 +1,12 @@
+{
+  "FromModel": "SapConcurApiClient.VendorModels.Vendor",
+  "ToFunction": "Data/Sage/AccountsPayableVendors/VENDOR.json",
+  "Mappings": [
+    {
+      "TargetProperty": "ColumnB",
+      "Value": "ColumnA",
+      "Type": "Property|Const|Ternary", // "Property|Const|Ternary"
+      "Comment": ""
+    }
+  ]
+}

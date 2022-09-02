@@ -1,0 +1,128 @@
+[
+  {
+    "Name": "PRINTAS",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Print as"
+  },
+  {
+    "Name": "CONTACTNAME",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "If left blank, system will create the name as [NAME](V[VENDORID])"
+  },
+  {
+    "Name": "COMPANYNAME",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Company name"
+  },
+  {
+    "Name": "TAXABLE",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Taxable. Use false for No, true for Yes. (Default: true)"
+  },
+  {
+    "Name": "TAXGROUP",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Contact tax group name"
+  },
+  {
+    "Name": "TAXSCHEDULE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "You can assign a default tax schedule for a vendor contact. When you create an AP transaction, the tax details from the assigned schedule are used as the default for the AP line entry. The tax details can be overridden through the UI"
+  },
+  {
+    "Name": "TAXSOLUTIONID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Tax solution. Required if providing Tax Schedule"
+  },
+  {
+    "Name": "PREFIX",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Prefix"
+  },
+  {
+    "Name": "FIRSTNAME",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "First name"
+  },
+  {
+    "Name": "LASTNAME",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Last name"
+  },
+  {
+    "Name": "INITIAL",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Middle name"
+  },
+  {
+    "Name": "PHONE1",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Primary phone number"
+  },
+  {
+    "Name": "PHONE2",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Secondary phone number"
+  },
+  {
+    "Name": "CELLPHONE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Cellular phone number"
+  },
+  {
+    "Name": "PAGER",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Pager number"
+  },
+  {
+    "Name": "FAX",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Fax number"
+  },
+  {
+    "Name": "EMAIL1",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Primary email address"
+  },
+  {
+    "Name": "EMAIL2",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Secondary email address"
+  },
+  {
+    "Name": "URL1",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Primary URL"
+  },
+  {
+    "Name": "URL2",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Secondary URL"
+  },
+  {
+    "Name": "MAILADDRESS",
+    "Required": "Optional",
+    "Type": "object",
+    "Description": "Mail address"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "CATEGORYNAME",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Contact category, such as work, home, and so forth."
+  },
+  {
+    "Name": "CONTACT",
+    "Required": "Required",
+    "Type": "object",
+    "Description": "Contact"
+  }
+]

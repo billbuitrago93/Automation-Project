@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "BANKACCOUNTNUMBER",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Creditor account number. Use 9 or fewer digits, including hyphens and spaces."
+  },
+  {
+    "Name": "ACCOUNTNAME",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Creditor account name. Use 16 or fewer alphanumeric characters."
+  },
+  {
+    "Name": "BSBNUMBER",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Creditor BSB number, which is the 6-digit hyphenated branch number of the vendor bank account. For example, 123-456."
+  },
+  {
+    "Name": "PYMTREFERENCE",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Meaningful reference number to connect the bank file and the bills to be paid, enabling payments to be tracked. Use 18 or fewer alphanumeric characters."
+  }
+]

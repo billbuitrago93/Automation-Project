@@ -1,0 +1,5 @@
+{
+  "FromModel": "SapConcurApiClient.PaymentRequestModels.PaymentRequest",
+  "ToFunction": "Data/Sage/AccountsPayableBills/APBILL.json",
+  "Mappings": []
+}

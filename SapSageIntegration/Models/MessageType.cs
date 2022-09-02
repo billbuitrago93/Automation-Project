@@ -1,4 +1,4 @@
-﻿namespace SapSageIntegration.Services
+﻿namespace SapSageIntegration.Models
 {
     public enum MessageType
     {

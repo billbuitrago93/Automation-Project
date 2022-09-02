@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "ACCOUNTNAME",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Homing account name for the vendor bank account to which payments are made. Use 30 or fewer digits."
+  },
+  {
+    "Name": "BANKACCOUNTNUMBER",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Homing account number for the vendor bank account to which payments are made. Use 31 or fewer digits."
+  },
+  {
+    "Name": "BRANCHCODE",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Homing branch, which is the 6-digit branch number of the vendor bank"
+  },
+  {
+    "Name": "ACCOUNTTYPE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Account type for the vendor bank account to which payments are made. Use 1 for cheque account, 2 for savings account, 3 for transmission account, or 4 for bond account."
+  },
+  {
+    "Name": "ACCOUNTCODE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Beneficiary account code. Use 20 or fewer characters."
+  },
+  {
+    "Name": "PROOFOFPYMT",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Proof of payment flag, which specifies whether to print the proof of payment when the bank file payment is authorized. Use false for No, true for Yes."
+  },
+  {
+    "Name": "PYMTREFERENCE",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "User reference, which is a meaningful reference number to connect the bank file and the bills to be paid, enabling payments to be tracked. Use 20 or fewer alphanumeric characters."
+  }
+]

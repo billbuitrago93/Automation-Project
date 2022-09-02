@@ -1,0 +1,8 @@
+[
+  {
+    "Name": "CONTACTNAME",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Pay to contact name"
+  }
+]

@@ -1,8 +1,7 @@
 using Microsoft.Azure.WebJobs;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using SapConcurApiClient.Api;
-using SapConcurApiClient.Client;
+using SapSageIntegration.Models;
 using SapSageIntegration.Services;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -15,12 +14,12 @@ namespace SapSageIntegration
 
         public SapConcurFunction(IConfiguration configuration)
         {
-            var sapApiBaseUrl = configuration.GetValue<string>(Consts.SAPApiBaseUrl); 
-            var concurApiService = new ConcurApiService(sapApiBaseUrl);
-            sapConcurService = new SapConcurService(concurApiService); ;
+            var config = new SapConcurConfig();
+            config.BaseUrl = "https://sapconcurapi.azurewebsites.net/api/v3.0";
+            sapConcurService = new SapConcurService(config);
         }
 
-        [FunctionName("SAP-Concur-Function")] 
+        [FunctionName("SAP-Concur-Function")]
         public async Task RunAsync([TimerTrigger(Consts.SAPGetRequestTriggerTime)] TimerInfo myTimer, ILogger log, [ServiceBus(Consts.MessageBusQueueName, Connection = Consts.MessageBusConnection)] IAsyncCollector<MessageDto> outputServiceBus)
         {
             var invoices = await sapConcurService.GetInvoicesAsync();

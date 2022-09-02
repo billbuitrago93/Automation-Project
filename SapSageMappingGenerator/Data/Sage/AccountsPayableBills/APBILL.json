@@ -1,0 +1,148 @@
+// APBILL
+// https://developer.intacct.com/api/accounts-payable/bills/#create-APBILL
+[
+  {
+    "Name": "VENDORID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Vendor ID. Required if Action is not set to Draft."
+  },
+  {
+    "Name": "WHENCREATED",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Transaction date in format mm/dd/yyyy. Required if Action is not set to Draft."
+  },
+  {
+    "Name": "WHENPOSTED",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "GL posting date in format mm/dd/yyyy. Not used if PRBATCH provided."
+  },
+  {
+    "Name": "BILLTOPAYTOCONTACTNAME",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Pay to contact"
+  },
+  {
+    "Name": "SHIPTORETURNTOCONTACTNAME",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Return to contact"
+  },
+  {
+    "Name": "RECORDID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Bill number"
+  },
+  {
+    "Name": "DOCNUMBER",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Reference number"
+  },
+  {
+    "Name": "DESCRIPTION",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Description"
+  },
+  {
+    "Name": "TERMNAME",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Payment term"
+  },
+  {
+    "Name": "RECPAYMENTDATE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Recommended to pay on date in format mm/dd/yyyy"
+  },
+  {
+    "Name": "SUPDOCID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Attachments ID"
+  },
+  {
+    "Name": "WHENDUE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Due date in format mm/dd/yyyy. Required if Action is not set to Draft."
+  },
+  {
+    "Name": "PAYMENTPRIORITY",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Payment priority. urgent, high, normal (default), low"
+  },
+  {
+    "Name": "ONHOLD",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "On hold. false - No (detault) true - Yes"
+  },
+  {
+    "Name": "PRBATCH",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Summary name to post into. Required if bill summary option is set to user specified in AP config."
+  },
+  {
+    "Name": "CURRENCY",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Transaction currency code"
+  },
+  {
+    "Name": "BASECURR",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Base currency code"
+  },
+  {
+    "Name": "EXCH_RATE_DATE",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Exchange rate date in format mm/dd/yyyy"
+  },
+  {
+    "Name": "EXCH_RATE_TYPE_ID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Exchange rate type. Do not use if EXCHANGE_RATE is set. (Leave blank to use Intacct Daily Rate)"
+  },
+  {
+    "Name": "EXCHANGE_RATE",
+    "Required": "Optional",
+    "Type": "currency",
+    "Description": "Exchange rate value. Do not use if EXCH_RATE_TYPE_ID is set."
+  },
+  {
+    "Name": "INCLUSIVETAX",
+    "Required": "Optional",
+    "Type": "boolean",
+    "Description": "Inclusive taxes. Set to true to have the system calculate the transaction amount (TRX_AMOUNT) for the bill line and the transaction tax (TRX_TAX) for the tax entry based on the value supplied for TOTALTRXAMOUNT on the bill line and the tax rate of the tax detail (DETAILID) for the tax entry. (AU, GB, ZA only)"
+  },
+  {
+    "Name": "ACTION",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Action to execute on create. Submit (default) or Draft"
+  },
+  {
+    "Name": "TAXSOLUTIONID",
+    "Required": "Optional",
+    "Type": "string",
+    "Description": "Tax solution name, such as United Kingdom - VAT or Australia - GST. Required only if the company is configured for multiple tax jurisdictions and the transaction is occurring at the top level of the company. See Tax Solutions for more information. (GB, AU, and ZA only)"
+  },
+  {
+    "Name": "APBILLITEMS",
+    "Required": "Required",
+    "Type": "array of APBILLITEM",
+    "Description": "Bill lines, must have at least 1. Custom field name"
+  }
+]

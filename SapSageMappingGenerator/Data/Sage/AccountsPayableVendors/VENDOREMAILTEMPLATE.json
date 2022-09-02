@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "EMAILTEMPLATENAME",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Name of the email template"
+  },
+  {
+    "Name": "DOCPARID",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Document type, such as Purchase Order"
+  }
+]

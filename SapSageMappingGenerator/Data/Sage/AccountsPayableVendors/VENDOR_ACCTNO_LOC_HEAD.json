@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "LOCATION",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Location ID"
+  },
+  {
+    "Name": "ACCOUNTNO",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Account number"
+  }
+]

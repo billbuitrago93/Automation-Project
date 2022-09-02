@@ -1,9 +1,13 @@
-﻿using SapConcurApiClient.ExpenseReportModels;
+﻿using Intacct.SDK;  
+using SapConcurApiClient.ExpenseReportModels;
 using SapConcurApiClient.PaymentRequestModels;
-using SapConcurApiClient.VendorModels;
-using System;
+using SapConcurApiClient.VendorModels; 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SapSageIntegration.Mappers;
+using Intacct.SDK.Functions;
+using Intacct.SDK.Functions.AccountsReceivable;
+using Intacct.SDK.Xml;
 
 namespace SapSageIntegration.Services
 {
@@ -12,9 +16,21 @@ namespace SapSageIntegration.Services
     /// </summary>
     public class SageIntactService
     {
-        public SageIntactService()
+        private readonly OnlineClient client;
+        public SageIntactService(SageIntactConfig config)
         {
-
+            var clientConfig = new ClientConfig()
+            {
+                EndpointUrl = config.EndpointUrl,
+                EntityId = config.EntityId,
+                CompanyId = config.CompanyId,
+                SessionId = config.SessionId,
+                SenderId = config.SenderId,
+                SenderPassword = config.SenderPassword,
+                UserId = config.UserId,
+                UserPassword = config.UserPassword,
+            };
+            client = new OnlineClient(clientConfig);
         }
 
         /// <summary>
@@ -24,8 +40,16 @@ namespace SapSageIntegration.Services
         /// <param name="items"></param>
         /// <returns></returns>
         public async Task CreateVendorsAsync(List<Vendor> items)
-        {
-           
+        { 
+            var vendorCreateFunctions = new List<IFunction>(); 
+            foreach (var item in items)
+            {
+                var vendorCreate = VendorMapper.Map(item);
+                vendorCreateFunctions.Add(vendorCreate); 
+            }
+            var createTask = client.ExecuteBatch(vendorCreateFunctions);
+            createTask.Wait();
+            //OnlineResponse createResponse = createTask.Result;
         }
 
         /// <summary>
@@ -35,7 +59,9 @@ namespace SapSageIntegration.Services
         /// <returns></returns>
         public async Task CreateARPaymentsAsync(List<PaymentRequest> items)
         {
-        
+            var arPaymentsCreateFunctions = new List<IFunction>();
+            var z = default(string);
+            var x = new ArPaymentCreate();
         }
 
         /// <summary>
@@ -45,7 +71,7 @@ namespace SapSageIntegration.Services
         /// <returns></returns>
         public async Task CreateAPPaymentsAsync(List<ReportGet> items)
         {
-          
+
         }
     }
 }

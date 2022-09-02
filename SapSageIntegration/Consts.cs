@@ -11,6 +11,8 @@ namespace SapSageIntegration
         public const string MessageBusQueueName = "%MessageBusQueueName%";
         public const string MessageBusConnection = "MessageBusConnection";
         public const string SAPGetRequestTriggerTime = "%SAPGetRequestTriggerTime%";
-        public const string SAPApiBaseUrl = "SAPApiBaseUrl";
-     }
+
+        public const string SAPApiSection = "SAPApi";
+        public const string SageApiSection = "SageApi";
+    }
 }

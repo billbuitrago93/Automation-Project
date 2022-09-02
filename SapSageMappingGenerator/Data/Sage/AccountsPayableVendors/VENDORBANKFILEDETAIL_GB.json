@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "BANKACCOUNTNUMBER",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Beneficiary account number. Use 8 or fewer digits, including hyphens and spaces."
+  },
+  {
+    "Name": "ACCOUNTNAME",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Beneficiary name. Use 18 or fewer characters."
+  },
+  {
+    "Name": "SORTCODE",
+    "Required": "Required",
+    "Type": "string",
+    "Description": "Beneficiary sort code, which is the 6-digit branch number of the vendor bank"
+  }
+]
