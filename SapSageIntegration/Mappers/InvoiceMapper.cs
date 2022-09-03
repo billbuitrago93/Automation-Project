@@ -4,11 +4,8 @@ using SapConcurApiClient.PaymentRequestModels;
 
 namespace SapSageIntegration.Mappers
 {
-    public static class Mapper
+    public static class InvoiceMapper
     {
-        public static BillCreate Map(PaymentRequest paymentRequest)
-        {
-
-        }
+       
     }
 }
