@@ -1,10 +1,5 @@
 ﻿using IO.Swagger.Api;
 using SapConcurApiClient.Client;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SapConcurApiClient.Api
 {
@@ -14,14 +9,14 @@ namespace SapConcurApiClient.Api
 
         public ConcurExpenseReportsApi ExpenseReportsApi { get; private set; }
         public ConcurPaymentRequestDigestApi PaymentRequestDigestApi { get; private set; }
-        public ConcurPaymentRequestApi PaymentRequestApi{ get; private set; }
+        public ConcurPaymentRequestApi PaymentRequestApi { get; private set; }
         public ConcurVendorsApi VendorsApi { get; private set; }
 
         public ConcurApiService(string basePath, string clientId, string clientSecret)
-        { 
+        {
             configuration = new Configuration();
             configuration.BasePath = basePath;
-           // configuration.AccessToken = ConcurApiOAuthService.GetAuthToken(clientId, clientSecret);
+            // configuration.AccessToken = ConcurApiOAuthService.GetAuthToken(clientId, clientSecret);
 
             ExpenseReportsApi = new ConcurExpenseReportsApi(configuration);
             PaymentRequestDigestApi = new ConcurPaymentRequestDigestApi(configuration);

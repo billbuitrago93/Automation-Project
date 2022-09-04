@@ -27,9 +27,9 @@ namespace SapSageIntegration.Services
         /// <returns></returns>
         public async Task<List<PaymentRequest>> GetInvoicesAsync()
         {
-            var paymentRequests = new List<PaymentRequest>(); 
+            var paymentRequests = new List<PaymentRequest>();
             var paymentRequestDigests = await _concurApiService.PaymentRequestDigestApi.InvoicePaymentrequestdigestsGetAsync();
-           
+
             foreach (var item in paymentRequestDigests.Items)
             {
                 var paymentRequest = await _concurApiService.PaymentRequestApi.InvoicePaymentrequestIdGetAsync(item.ID);
@@ -58,7 +58,7 @@ namespace SapSageIntegration.Services
             return vendorCollection.Items;
         }
 
-        private bool IsValidUrl(string uriName) 
+        private bool IsValidUrl(string uriName)
         {
             Uri uriResult;
             bool result = Uri.TryCreate(uriName, UriKind.Absolute, out uriResult) && uriResult.Scheme == Uri.UriSchemeHttp;

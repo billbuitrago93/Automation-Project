@@ -31,7 +31,7 @@ namespace SapConcurApiClient.PaymentRequestDigestModels
         public PaymentRequestDigestCollection(List<PaymentRequestDigest> items = default(List<PaymentRequestDigest>), string nextPage = default(string), PaymentRequestDigest paymentRequestDigest = default(PaymentRequestDigest), int? totalCount = default(int?))
         {
             this.Items = items;
-            this.NextPage = nextPage; 
+            this.NextPage = nextPage;
             this.TotalCount = totalCount;
         }
 
@@ -46,7 +46,7 @@ namespace SapConcurApiClient.PaymentRequestDigestModels
         /// </summary>
         /// <value>The URI of the next page of results, if any.</value>
         [DataMember(Name = "NextPage", EmitDefaultValue = false)]
-        public string NextPage { get; set; } 
+        public string NextPage { get; set; }
 
         /// <summary>
         /// Gets or Sets TotalCount
@@ -63,7 +63,7 @@ namespace SapConcurApiClient.PaymentRequestDigestModels
             var sb = new StringBuilder();
             sb.Append("class PaymentRequestDigestCollection {\n");
             sb.Append("  Items: ").Append(Items).Append("\n");
-            sb.Append("  NextPage: ").Append(NextPage).Append("\n"); 
+            sb.Append("  NextPage: ").Append(NextPage).Append("\n");
             sb.Append("  TotalCount: ").Append(TotalCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -108,7 +108,7 @@ namespace SapConcurApiClient.PaymentRequestDigestModels
                     this.NextPage == input.NextPage ||
                     (this.NextPage != null &&
                     this.NextPage.Equals(input.NextPage))
-                ) && 
+                ) &&
                 (
                     this.TotalCount == input.TotalCount ||
                     (this.TotalCount != null &&
@@ -128,7 +128,7 @@ namespace SapConcurApiClient.PaymentRequestDigestModels
                 if (this.Items != null)
                     hashCode = hashCode * 59 + this.Items.GetHashCode();
                 if (this.NextPage != null)
-                    hashCode = hashCode * 59 + this.NextPage.GetHashCode(); 
+                    hashCode = hashCode * 59 + this.NextPage.GetHashCode();
                 if (this.TotalCount != null)
                     hashCode = hashCode * 59 + this.TotalCount.GetHashCode();
                 return hashCode;

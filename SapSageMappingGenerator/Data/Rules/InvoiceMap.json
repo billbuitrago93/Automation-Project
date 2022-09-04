@@ -1,5 +1,162 @@
 {
   "FromModel": "SapConcurApiClient.PaymentRequestModels.PaymentRequest",
   "ToFunction": "Data/Sage/AccountsPayableBills/APBILL.json",
-  "Mappings": []
+  "Mappings": [
+    {
+      "TargetProperty": "INCLUSIVETAX",
+      "Value": "false",
+      "Type": "Const",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.LINE_NO",
+      "Value": "1",
+      "Type": "Const",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "ACTION",
+      "Value": "Draft",
+      "Type": "Const",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "PRBATCH",
+      "Value": "Title",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "EXCH_RATE_TYPE_ID",
+      "Value": "CompanyFX",
+      "Type": "Const",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "CURRENCY",
+      "Value": "CurrencyCode",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.EMPLOYEEID",
+      "Value": "Custom 10",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.LOCATIONID",
+      "Value": "Custom1 & Custom4",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.DEPARTMENTID",
+      "Value": "Custom3",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.PROJECTID",
+      "Value": "Custom8",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "BASECURR",
+      "Value": "Entity base currency",
+      "Type": "-",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "WHENPOSTED",
+      "Value": "ExtractDate",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "WHENCREATED",
+      "Value": "InvoiceDate",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "EXCH_RATE_DATE",
+      "Value": "InvoiceDate",
+      "Type": "-",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "RECORDID",
+      "Value": "InvoiceNumber",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.ACCOUNTNO",
+      "Value": "LineItems.LineItem.Allocations.Allocation.AllocationAccountCode",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.AMOUNT",
+      "Value": "LineItems.LineItem.AmountWithoutVat",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DESCRIPTION",
+      "Value": "LineItems.LineItem.Description",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.ENTRYDESCRIPTION",
+      "Value": "LineItems.LineItem.Description",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.LINE_NO",
+      "Value": "LineItems.LineItem.RequestLineItemNumber",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "WHENDUE",
+      "Value": "PaymentDueDate",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.TAXENTRIES.DETAILID",
+      "Value": "Tax Code",
+      "Type": "-",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "TAXSOLUTIONID",
+      "Value": "Tax Solution ID",
+      "Type": "-",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.TAXENTRIES.TRX_TAX",
+      "Value": "TaxAmount",
+      "Type": "-",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "VENDORID",
+      "Value": "VendorRemitAddress.VendorCode",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APBILLITEMS.APBILLITEM.VENDORID",
+      "Value": "VendorRemitAddress.VendorCode",
+      "Type": "Property",
+      "Comment": ""
+    }
+  ]
 }

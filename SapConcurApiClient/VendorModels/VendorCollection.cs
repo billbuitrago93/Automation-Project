@@ -69,7 +69,7 @@ namespace SapConcurApiClient.VendorModels
         /// Gets or Sets Items
         /// </summary>
         [DataMember(Name = "Items", EmitDefaultValue = false)]
-        public List<Vendor> Items { get; set; }  
+        public List<Vendor> Items { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

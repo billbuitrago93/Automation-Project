@@ -1,5 +1,3 @@
-// APBILL.APBILLITEMS.APBILLITEM
-// https://developer.intacct.com/api/accounts-payable/bills/#create-APBILLITEM
 [
   {
     "Name": "ACCOUNTNO",

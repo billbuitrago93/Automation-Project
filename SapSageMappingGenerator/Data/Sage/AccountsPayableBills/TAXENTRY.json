@@ -1,5 +1,3 @@
-// APBILL.APBILLITEMS.APBILLITEM.TAXENTRIES.TAXENTRY (AU, GB, ZA only)
-// https://developer.intacct.com/api/accounts-payable/bills/#create-APBILLITEM.TAXITEM
 [
   {
     "Name": "DETAILID",

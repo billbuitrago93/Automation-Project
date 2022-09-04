@@ -34,7 +34,7 @@ namespace SapSageIntegration
         public async Task RunAsync([ServiceBusTrigger(Consts.MessageBusQueueName, Connection = Consts.MessageBusConnection)] MessageDto message, ILogger log, [ServiceBus(Consts.MessageBusQueueName, Connection = Consts.MessageBusConnection)] IAsyncCollector<MessageDto> outputServiceBus)
         {
             try
-            { 
+            {
                 log.LogInformation($"C# ServiceBus queue trigger function processed message: {message.Type.ToString().ToUpper()}, resendCount: {message.ResendCount}");
                 switch (message.Type)
                 {
@@ -49,7 +49,7 @@ namespace SapSageIntegration
                         break;
                     default:
                         throw new ArgumentException($"Bad message type: {message.Type}");
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace SapSageIntegration
                 {
                     Thread.Sleep(5000);
                     message.ResendCount += 1;
-                    message.ResendDesc = ex.Message; 
+                    message.ResendDesc = ex.Message;
                     await outputServiceBus.AddAsync(message);
                     log.LogError(ex, $"Resended message {message.Type}, resendCount: {message.ResendDesc}");
                 }
@@ -70,8 +70,8 @@ namespace SapSageIntegration
         /// <typeparam name="T"></typeparam>
         /// <param name="content"></param>
         /// <returns></returns>
-        private T Deserialize<T>(string content) 
-        { 
+        private T Deserialize<T>(string content)
+        {
             JsonSerializerSettings serializerSettings = new JsonSerializerSettings
             {
                 ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor

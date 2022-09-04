@@ -1,13 +1,12 @@
-﻿using Intacct.SDK;  
-using SapConcurApiClient.ExpenseReportModels;
-using SapConcurApiClient.PaymentRequestModels;
-using SapConcurApiClient.VendorModels; 
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using SapSageIntegration.Mappers;
+﻿using Intacct.SDK;
 using Intacct.SDK.Functions;
 using Intacct.SDK.Functions.AccountsReceivable;
-using Intacct.SDK.Xml;
+using SapConcurApiClient.ExpenseReportModels;
+using SapConcurApiClient.PaymentRequestModels;
+using SapConcurApiClient.VendorModels;
+using SapSageIntegration.Mappers;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace SapSageIntegration.Services
 {
@@ -24,7 +23,6 @@ namespace SapSageIntegration.Services
                 EndpointUrl = config.EndpointUrl,
                 EntityId = config.EntityId,
                 CompanyId = config.CompanyId,
-                SessionId = config.SessionId,
                 SenderId = config.SenderId,
                 SenderPassword = config.SenderPassword,
                 UserId = config.UserId,
@@ -40,12 +38,12 @@ namespace SapSageIntegration.Services
         /// <param name="items"></param>
         /// <returns></returns>
         public async Task CreateVendorsAsync(List<Vendor> items)
-        { 
-            var vendorCreateFunctions = new List<IFunction>(); 
+        {
+            var vendorCreateFunctions = new List<IFunction>();
             foreach (var item in items)
             {
                 var vendorCreate = VendorMapper.Map(item);
-                vendorCreateFunctions.Add(vendorCreate); 
+                vendorCreateFunctions.Add(vendorCreate);
             }
             var createTask = client.ExecuteBatch(vendorCreateFunctions);
             createTask.Wait();

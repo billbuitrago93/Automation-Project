@@ -3,9 +3,147 @@
   "ToFunction": "Data/Sage/AccountsPayableVendors/VENDOR.json",
   "Mappings": [
     {
-      "TargetProperty": "ColumnB",
-      "Value": "ColumnA",
-      "Type": "Property|Const|Ternary", // "Property|Const|Ternary"
+      "TargetProperty": "APACCOUNT",
+      "Value": "AccountNumber",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "APACCOUNT",
+      "Value": "DefaultExpenseTypeName",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "CURRENCY",
+      "Value": "CurrencyCode",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.EMAIL1",
+      "Value": "ContactEmail",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.EMAIL2",
+      "Value": "PurchaseOrderContactEmail",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.FIRSTNAME",
+      "Value": "ContactFirstName",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.LASTNAME",
+      "Value": "ContactLastName",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.MAILADDRESS.ADDRESS1",
+      "Value": "Address1",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.MAILADDRESS.ADDRESS2",
+      "Value": "Address2",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.MAILADDRESS.CITY",
+      "Value": "City",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.MAILADDRESS.COUNTRY",
+      "Value": "Country",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.MAILADDRESS.COUNTRYCODE",
+      "Value": "CountryCode",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.MAILADDRESS.STATE",
+      "Value": "State",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.MAILADDRESS.ZIP",
+      "Value": "PostalCode",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.PHONE1",
+      "Value": "ContactPhoneNumber",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.TAXGROUP",
+      "Value": "TaxType",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "DISPLAYCONTACT.URL1",
+      "Value": "URI",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "NAME",
+      "Value": "VendorName",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "PAYMETHODKEY",
+      "Value": "PaymentMethodType",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "RECORDNO",
+      "Value": "ID",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "STATUS",
+      "Value": "Approved",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "TAXID",
+      "Value": "TaxID",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "TERMNAME",
+      "Value": "PaymentTerms",
+      "Type": "Property",
+      "Comment": ""
+    },
+    {
+      "TargetProperty": "VENDORID",
+      "Value": "VendorCode",
+      "Type": "Property",
       "Comment": ""
     }
   ]
