@@ -1,11 +1,8 @@
 ﻿using SapSageMappingGenerator;
+using System.Diagnostics;
 
 Console.WriteLine("Hello, World!");
-
-
-//var body = SageFunctionGenerator.GetFunctionBody("Data/Rules/VendorMap.json"); 
-
-var invoiceBody = SageFunctionGenerator.GetFunctionBody("Data/Rules/InvoiceMap.json");
-Console.WriteLine(invoiceBody);
-
-
+ 
+SageFunctionGenerator.CreateSageFunction("Data/Rules/VendorMap.json", "Vendor");
+SageFunctionGenerator.CreateSageFunction("Data/Rules/InvoiceMap.json", "Invoice");
+ 

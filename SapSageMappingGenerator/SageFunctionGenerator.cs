@@ -5,10 +5,32 @@ namespace SapSageMappingGenerator
 {
     public static class SageFunctionGenerator
     {
-        public static string GetFunctionBody(string mappingRulePapth)
+        public static  void CreateSageFunction(string mappingRulePapth, string functionName) 
         {
             var mappingRule = JsonSerializer.Deserialize<MappingRule>(File.ReadAllText(mappingRulePapth));
+            string body = GetFunctionBody(mappingRule);
 
+            var templateSourceCode = File.ReadAllText("Data/Templates/MapperTemplate.cs");
+            templateSourceCode = templateSourceCode.Replace("/*", "");
+            templateSourceCode = templateSourceCode.Replace("*/", "");
+
+            templateSourceCode =  templateSourceCode.Replace("[TargetName]", functionName);
+
+            var namespaces = mappingRule.FromModel.Split(".");
+            var modelTypeName = namespaces[namespaces.Length - 1];
+          
+            templateSourceCode = templateSourceCode.Replace("[UsingModel]", String.Join(".", namespaces.Take(namespaces.Length - 1)));                  
+            templateSourceCode = templateSourceCode.Replace("[Model]", modelTypeName);
+
+            templateSourceCode = templateSourceCode.Replace("[Body]", body);
+
+
+            Directory.CreateDirectory("GeneratedCode");
+            File.WriteAllText($"GeneratedCode/{functionName}Mapper.cs", templateSourceCode);
+        }
+
+        public static string GetFunctionBody(MappingRule mappingRule)
+        { 
             var mainProperyName = SageFunctionHelper.GetPropertyItemTypeFromFilePath(mappingRule.ToFunction);
             var properties = SageFunctionHelper.GetSageProperties(mappingRule.ToFunction);
 
@@ -99,6 +121,7 @@ namespace SapSageMappingGenerator
                     {
                         // Start
                         builder.AppendLine("");
+                        builder.AppendLine($"// {item.Description}");
                         builder.AppendLine($"xml.WriteStartElement(\"{item.Name}\");");
 
                         builder.AppendLine("");

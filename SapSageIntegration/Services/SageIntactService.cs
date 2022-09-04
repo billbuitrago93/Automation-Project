@@ -1,12 +1,17 @@
 ﻿using Intacct.SDK;
 using Intacct.SDK.Functions;
 using Intacct.SDK.Functions.AccountsReceivable;
+using Intacct.SDK.Xml;
 using SapConcurApiClient.ExpenseReportModels;
 using SapConcurApiClient.PaymentRequestModels;
 using SapConcurApiClient.VendorModels;
 using SapSageIntegration.Mappers;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace SapSageIntegration.Services
 {
@@ -39,14 +44,16 @@ namespace SapSageIntegration.Services
         /// <returns></returns>
         public async Task CreateVendorsAsync(List<Vendor> items)
         {
-            var vendorCreateFunctions = new List<IFunction>();
+            var createFunctions = new List<IFunction>();
             foreach (var item in items)
             {
-                var vendorCreate = VendorMapper.Map(item);
-                vendorCreateFunctions.Add(vendorCreate);
+                var mappedFunction = new VendorMapper(item);
+                createFunctions.Add(mappedFunction); 
+
             }
-            var createTask = client.ExecuteBatch(vendorCreateFunctions);
+            var createTask = client.ExecuteBatch(createFunctions);
             createTask.Wait();
+
             //OnlineResponse createResponse = createTask.Result;
         }
 
@@ -57,9 +64,14 @@ namespace SapSageIntegration.Services
         /// <returns></returns>
         public async Task CreateARPaymentsAsync(List<PaymentRequest> items)
         {
-            var arPaymentsCreateFunctions = new List<IFunction>();
-            var z = default(string);
-            var x = new ArPaymentCreate();
+            var createFunctions = new List<IFunction>();
+            foreach (var item in items)
+            {
+                var mappedFunction = new InvoiceMapper(item);
+                createFunctions.Add(mappedFunction);
+            }
+            var createTask = client.ExecuteBatch(createFunctions);
+            createTask.Wait(); 
         }
 
         /// <summary>
@@ -70,6 +82,26 @@ namespace SapSageIntegration.Services
         public async Task CreateAPPaymentsAsync(List<ReportGet> items)
         {
 
+        }
+
+        private string FunctionXmlToString(IFunction function) 
+        {
+            Stream stream = new MemoryStream();
+            XmlWriterSettings xmlSettings = new XmlWriterSettings
+            {
+                Encoding = Encoding.UTF8,
+                Indent = true,
+                IndentChars = "    "
+            };
+            IaXmlWriter xml = new IaXmlWriter(stream, xmlSettings);
+
+            function.WriteXml(ref xml);
+
+            xml.Flush();
+            stream.Position = 0;
+            StreamReader reader = new StreamReader(stream);
+             
+            return reader.ReadToEnd();
         }
     }
 }

@@ -1,4 +1,4 @@
-
+﻿/*
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,14 +7,14 @@ using Intacct.SDK.Functions.Company;
 using Intacct.SDK.Xml;
 using Intacct.SDK.Functions; 
 
-using SapConcurApiClient.PaymentRequestModels;
+using [UsingModel];
 
 namespace SapSageIntegration.Mappers
 {
-    public class InvoiceMapper : AbstractFunction
+    public class [TargetName]Mapper : AbstractFunction
     {
-        private readonly PaymentRequest model;
-        public InvoiceMapper(PaymentRequest model, string controlId = null)
+        private readonly [Model] model;
+        public [TargetName]Mapper([Model] model, string controlId = null)
             : base(controlId)
         {
             this.model = model;
@@ -24,11 +24,13 @@ namespace SapSageIntegration.Mappers
         {
             xml.WriteStartElement("function");
             xml.WriteAttribute("controlid", base.ControlId, writeNull: true);
-            xml.WriteStartElement("create"); 
-       
+            xml.WriteStartElement("create");
+
+            [Body]       
 
             xml.WriteEndElement();
             xml.WriteEndElement();
         }
     }
 }
+*/
